@@ -1,6 +1,6 @@
 #!/bin/sh
 sudo apt-get clean
-sudo rm /var/lib/apt/lists/*
+sudo rm -r /var/lib/apt/lists/*
 sudo apt-get clean
 
 sudo apt-get update -y -o Acquire::Retries=3 | tee /tmp/update-output.txt
@@ -12,7 +12,7 @@ pip3 install azure-ai-textanalytics==5.1.0
 
 cd /home/cloud_user/
 git clone "https://github.com/ACloudGuru-Resources/content-secure-azure-ai-services.git"
-mv "content-secure-azure-ai" "code"
+mv "content-secure-azure-ai-services" "code"
 
 sed -i "s,azurecognitiveservicesendpoint,$1,g" ./code/text_analytics.py
 sed -i "s,azurecognitiveserviceskey,$2,g" ./code/text_analytics.py
