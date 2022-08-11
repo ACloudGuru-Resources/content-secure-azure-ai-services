@@ -3,8 +3,7 @@ sudo apt-get clean
 sudo rm -r /var/lib/apt/lists/*
 sudo apt-get clean
 
-sudo apt-get update -y -o Acquire::Retries=3 | tee /tmp/update-output.txt
-sudo apt-get install python3-pip -y
+sudo apt-get update -y -o Acquire::Retries=3 | tee /tmp/update-output.txt && sudo apt-get install python3-pip -y
 
 pip3 install azure-identity==1.10.0
 pip3 install azure-keyvault-secrets==4.4.0
